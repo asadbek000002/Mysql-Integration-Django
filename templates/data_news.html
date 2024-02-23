@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data List</title>
+</head>
+<body>
+    <h1>Data List</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nomi</th>
+                <th>Ism-sharifi</th>
+                <th>Slugga</th>
+                <th>Rasm manzili</th>
+                <th>Matn</th>
+                <th>Sana</th>
+                <th>Tahrirlangan sana</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+           <tr>
+                <th>{{ row.0 }}</th>
+                <th>{{ row.1 }}</th>
+                <th>{{ row.2 }}</th>
+                <th>{{ row.3 }}</th>
+                <th>{{ row.4 }}</th>
+                <th>{{ row.5|safe }}</th>
+                <th>{{ row.6 }}</th>
+                <th>{{ row.7 }}</th>
+            </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+

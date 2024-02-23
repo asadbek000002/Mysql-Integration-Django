@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data List</title>
+</head>
+<body>
+    <h1>Data List</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Category</th>
+                <th>Field1</th>
+                <th>Field2</th>
+                <!-- Qo'shimcha ustunlar qo'shing -->
+                <th>Image</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Slug</th>
+                <th>File</th>
+                <th>Created</th>
+                <th>Modified</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+            <tr>
+                <td>{{ row.0 }}</td> <!-- ID -->
+                <td>{{ row.1 }}</td> <!-- Category -->
+                <td>{{ row.2 }}</td> <!-- Field1 -->
+                <td>{{ row.3 }}</td> <!-- Field2 -->
+                <!-- Qo'shimcha ustunlar -->
+                <td><img src="{{ row.5 }}" alt="{{ row.6 }}" width="100"></td> <!-- Image -->
+                <td>{{ row.6 }}</td> <!-- Title -->
+                <td>{{ row.7 }}</td> <!-- Content -->
+                <td>{{ row.8 }}</td> <!-- Slug -->
+                <td><a href="{{ row.9 }}">Download</a></td> <!-- File -->
+                <td>{{ row.10 }}</td> <!-- Created -->
+                <td>{{ row.11 }}</td> <!-- Modified -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+
